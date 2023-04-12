@@ -1,6 +1,7 @@
 import {fetchAllPlayers,removePlayer} from '../ajaxHelpers/puppies';
 import {useState, useEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
+
 
 const AllPuppers = () => {
     const [puppers, setPuppers] = useState([]);
@@ -14,6 +15,7 @@ const AllPuppers = () => {
 
     return(
         <div>
+            <Link to='/puppyFarm'>Make a doggo</Link>
         {
             puppers.map((pup)=>{
                 return (

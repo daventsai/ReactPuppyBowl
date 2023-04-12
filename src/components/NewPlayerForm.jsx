@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { addNewPlayer } from "../ajaxHelpers/puppies";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 
 const NewPlayerForm = () => {
     const [name,setName]= useState('');
@@ -8,16 +8,17 @@ const NewPlayerForm = () => {
     const pupperObj = {name,breed};
     const nav=useNavigate();
     return(
-        <div className='pup'>
-            <form onSubmit={async ()=>{
+        <div>
+            <Link to='/'>Home</Link>
+            <form onSubmit={async (e)=>{
                 e.preventDefault();
                 await addNewPlayer(pupperObj);
                 nav('/');
             }}>
                 <p>Name:</p>
-                <input type='text' name='name' onChange={(e)=>setName(e.target.value)}/>
+                <input type='text' name='name' value={name} onChange={(e)=>setName(e.target.value)}/>
                 <p>Breed:</p>
-                <input type='text' name='breed' onChange={(e)=>setBreed(e.target.value)}/>
+                <input type='text' name='breed' value={breed} onChange={(e)=>setBreed(e.target.value)}/>
                 <button type='submit'>Create Doggo</button>
             </form>
         </div>
