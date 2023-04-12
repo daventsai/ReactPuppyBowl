@@ -1,19 +1,18 @@
-import {Routes, Route, Link} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import './App.css'
-import SinglePup from './components/SinglePup'
+import AllPuppers from './components/AllPuppers'
+import SinglePuppers from './components/SinglePupper';
+import NewPlayerForm from './components/NewPlayerForm';
 
 function App() {
 
   return (
     <div className="App">
-      <form>
-        <p>Name:</p>
-        <input type='text' name='name'/>
-        <p>Breed:</p>
-        <input type='text' name='breed'/>
-        <button type='submit'>Submit</button>
-      </form>
-      <SinglePup/>
+      <NewPlayerForm/>
+      <Routes>
+        <Route path='/' element={<AllPuppers/>}/>
+        <Route path='/pups/:id' element={<SinglePuppers/>}/>
+      </Routes>
     </div>
   )
 }
