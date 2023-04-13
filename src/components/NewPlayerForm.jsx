@@ -16,9 +16,9 @@ const NewPlayerForm = () => {
                 nav('/');
             }}>
                 <p>Name:</p>
-                <input type='text' name='name' value={name} onChange={(e)=>setName(e.target.value)}/>
+                <input type='text' name='name' onChange={(e)=>setName(e.target.value)}/>
                 <p>Breed:</p>
-                <input type='text' name='breed' value={breed} onChange={(e)=>setBreed(e.target.value)}/>
+                <input type='text' name='breed' onChange={(e)=>setBreed(e.target.value)}/>
                 <button type='submit'>Create Doggo</button>
             </form>
         </div>

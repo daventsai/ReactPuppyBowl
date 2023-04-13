@@ -54,4 +54,8 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+.allPups{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
