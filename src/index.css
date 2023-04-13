@@ -59,3 +59,8 @@ button:focus-visible {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+.dogTag{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
